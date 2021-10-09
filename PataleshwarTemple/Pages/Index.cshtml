@@ -1,0 +1,636 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Har Har Mahadev";
+}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <title>Har Har Mahadev</title>
+
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <!-- CUSTOM STYLE -->
+    <link rel="stylesheet" href="css/template-style.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="css-pop.js"></script>
+    <style type="text/css">
+
+
+        table {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        td.manual {
+            border: none;
+            background: #00283a;
+        }
+
+        <!-- #owur-work {
+            background-color: lightblue;
+        }
+        -->
+        .ltnews {
+            color: #4C4C4C;
+            font-weight: bold;
+            font-family: Calibri;
+            font-size: 20;
+        }
+
+        .video-section {
+            margin: 0.2em 3px 1.2em 2px !important;
+        }
+
+            .video-section.our-work-text {
+                padding: 0.25em;
+            }
+    </style>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<body onload="popup('popUpDiv')" class="size-1140">
+    <!-- TOP NAV WITH LOGO -->
+    <header>
+        <div id="topbar">
+            <div class="line">
+                <div class="s-12 m-6 l-6">
+                    <p>CONTACT US: <strong>9540738085</strong> | <strong>rupeshvm.977@gmail.com</strong></p>
+                </div>
+
+
+                <div class="s-8 m-4 l-2">
+                    <audio style="display:none" id="myPlayer" loop="loop" controls="controls">
+                        <source src="Shankar_Mera_Pyara.mp3" type="audio/mpeg" />
+                    </audio>
+                    <input style="height:25px; width:25px;" id="btnPlay" type="image" onclick="document.getElementById('myPlayer').play()" src="./img/play.png" />&nbsp;
+                    <input style="height:25px; width:25px;" id="btnPause" type="image" onclick="document.getElementById('myPlayer').pause()" src="./img/pause.png" /> &nbsp;
+                    <input style="height:25px; width:25px;" id="btnVolUp" type="image" onclick="document.getElementById('myPlayer').volume += 0.1" src="./img/volup.png" />
+                    <p id="volUp"></p>
+                </div>
+                <div class="s-8 m-4 l-2">
+                    <input style="height:25px; width:25px;" id="btnVolDown" type="image" onclick="document.getElementById('myPlayer').volume -= 0.1" src="./img/voldown.png" />
+                    <p id="volDown"></p>
+                    <input style="height:25px; width:25px;" id="btnStop" type="image" onclick="stop();" src="./img/stop.png" />
+                    <input style="height:25px; width:25px; display:none;" id="btnMute" type="image" onclick="enableMute();" src="./img/mute.png" />
+                    <input style="height:21px; width:21px; " id="btnUnMute" type="image" onclick="enableMute();" src="./img/unmute.png" />
+                </div>
+                <div class="s-12 m-6 l-2">
+                    <div class="social right">
+                        <a href="https://www.facebook.com/Pataleswar-Shiv-Temple-565176623693121/"><i class="icon-facebook_circle"></i></a> <a href="https://twitter.com/PataleswarShiv"><i class="icon-twitter_circle"></i></a> <a href="https://plus.google.com/u/0/108130561463805069412"><i class="icon-google_plus_circle"></i></a> <a><i class="icon-instagram_circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="line">
+                <div class="s-12 l-2">
+                    <p class="logo"><strong>Pataleshwar</strong>Mahadev <br /></p>
+                    <p class="logo" style="margin-top:0px; font-size:20px"><strong>Lakhana Khera</strong></p>
+                </div>
+                <div class="top-nav s-12 l-10">
+                    <p class="nav-text"></p> <!-- Menu -->
+                    <ul class="right">
+                        <li class="active-item"><a href="#carousel">Shivay</a></li>
+                        <li><a href="#features">History</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#our-work">Next Event</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <!-- CAROUSEL -->
+        <div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="img/first.jpg" alt="">
+                    <div class="line">
+                        <div class="text hide-s">
+                            <div class="line">
+                                <div class="prev-arrow hide-s hide-m">
+                                    <i class="icon-chevron_left"></i>
+                                </div>
+                                <div class="next-arrow hide-s hide-m">
+                                    <i class="icon-chevron_right"></i>
+                                </div>
+                            </div>
+                            <h2>OM NAMAH SHIVAY</h2>
+                            <p>A Hindu temple reflects a synthesis of arts, the ideals of dharma, beliefs, values, and the way of life cherished under Hinduism. It is a link between man, deities, and the Universal Purusa in a sacred space.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/second.jpg" alt="">
+                    <div class="line">
+                        <div class="text hide-s">
+                            <div class="line">
+                                <div class="prev-arrow hide-s hide-m">
+                                    <i class="icon-chevron_left"></i>
+                                </div>
+                                <div class="next-arrow hide-s hide-m">
+                                    <i class="icon-chevron_right"></i>
+                                </div>
+                            </div>
+                            <h2>OM NAMAH SHIVAY</h2>
+                            <p>The spiritual principles symbolically represented in Hindu temples are given in the ancient Sanskrit texts of India (for example, Vedas and Upanishads).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/third.jpg" alt="">
+                    <div class="line">
+                        <div class="text hide-s">
+                            <div class="line">
+                                <div class="prev-arrow hide-s hide-m">
+                                    <i class="icon-chevron_left"></i>
+                                </div>
+                                <div class="next-arrow hide-s hide-m">
+                                    <i class="icon-chevron_right"></i>
+                                </div>
+                            </div>
+                            <h2>OM NAMAH SHIVAY</h2>
+                            <p>A Hindu temple or mandir is a structure designed to bring human beings and gods together, using symbolism to express the ideas and beliefs of Hinduism.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIRST BLOCK -->
+        <div id="first-block">
+            <div class="line">
+                <h1>"The Devo ke Dev-Mahadev"</h1>
+                <p>Shiva was called a ‘Maha Yogi’ because he meditated for hours for the well-being of the universe. His calm state of mind was disturbed only due to extreme reasons, but otherwise he would always be in a meditative state of mind.</p>
+                <div class="s-12 m-4 l-2 center"><a class="white-btn" href="#contact">Contact Us</a></div>
+            </div>
+        </div>
+        <!-- FEATURES -->
+        <div id="features">
+            <div class="line">
+                <div class="margin">
+                    <div class="s-12 m-6 l-3 margin-bottom">
+                        <i class="icon3x"><img src="img/1.png" alt=""></i>
+                        <h2>Lord Shiva the Enigmatic</h2>
+                        <p>According to Hindu mythology, Lord Shiva is the Destroyer in the Holy Trinity, the others being Brahma the Creator and Vishnu the Preserver. He has always fascinated his followers by his unique appearance – he has not two but three eyes, has ash smeared all over his body, leads a wild life away from social pretences, and is known for his proverbial anger…but not many know the story about how he was born.</p>
+                    </div>
+                    <div class="s-12 m-6 l-3 margin-bottom">
+                        <i class="icon3x"><img src="img/2.png" alt=""></i>
+                        <h2>So, how was Shiva born?</h2>
+                        <p>There is a very interesting story behind the birth of Lord Shiva. One day, Brahma and Vishnu were both arguing about which of them was more powerful. Right then, one great blazing pillar appeared, whose roots and branches extended into the earth and sky, beyond view.</p>
+                    </div>
+                    <div class="s-12 m-6 l-3 margin-bottom">
+                        <i class="icon3x"><img src="img/3.jpg" alt=""></i>
+                        <h2>The Third Power</h2>
+                        <p>Both Brahma and Vishnu set out to locate the start and end of that pillar. Brahma turned into a goose and flew up to find the top of the pillar, while Vishnu turned into a boar and dug into the earth to look for its roots. After their unsuccessful attempt, both came back to find Lord Shiva emerging from an opening in the pillar. Recognising Shiva’s great power, they both accepted that besides them, there was a third power ruling over the universe..</p>
+                    </div>
+                    <div class="s-12 m-6 l-3 margin-bottom">
+                        <i class="icon3x"><img src="img/4.jpg" alt=""></i>
+                        <h2>Lord Shiva’s Blue Throat</h2>
+                        <p>Lord Shiva is also known by the name of “Nilakaṇtha”, which literally means the blue-throated. Once Goddess Parvati learnt that Lord Shiva had swallowed poison, he rushed to hold his neck, so that the poison would not travel neck downwards. That’s how his neck became a deep blue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ABOUT US -->
+        <div id="about-us">
+            <div class="s-12 m-12 l-6 media-container">
+                <img style="height:600px; width:400px;" src="img/19.png" alt="">
+            </div>
+            <article class="s-12 m-12 l-6">
+                <h2>Om<br> Namah<br> Shivay</h2>
+                <p>
+                    The Pataleshwar Shiv temple located in Lakhana Khera near Dhamora in Rampur on the west of Uttara Pradesh, India. It is an important pilgrimage and tourist spot of Rampur(U.P.). Destroyed and reconstructed several times in the past, the present temple was reconstructed in latest of Hindu temple architecture and completed in May 2016. The reconstruction was envisioned by hindu comunity and was completed under authority of all member of village, the then head of the temple trust.
+                </p>
+                <div class="about-1us-icons">
+                    <table class="tb_ShivLinghs">
+                        <tr>
+                            <td class="manual" colspan="5"><img style="height:40px; width:600px;" src="img/21.png" alt=""></td>
+                        </tr>
+                        <tr>
+                            <td class="manual"><img style="height:100px; width:100px;" src="img/19.png" alt=""></td>
+                            <td class="manual"><img style="height:100px; width:100px;" src="img/17.png" alt=""></td>
+                            <td class="manual"><img style="height:100px; width:100px;" src="img/16.png" alt=""></td>
+                            <td class="manual"><img style="height:100px; width:100px;" src="img/15.png" alt=""></td>
+                            <td class="manual"><img style="height:100px; width:100px;" src="img/20.png" alt=""></td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </div>
+        <!-- OUR WORK -->
+        <div id="our-work" class="ourwork">
+            <div class="line lineOurWork">
+                <h2 class="section-title" style="margin: 15px;">Our Event</h2>
+                <div class="tabs">
+                    <div class="tab-item" style="padding: 0px;">
+                        <a class="tab-label">Maha ShivRatri</a>
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Maha ShivRatri</h4><p>We wish you and your family Happy Maha ShivRatri</p></div><img src="img/23.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Maha ShivRatri</h4><p>We wish you and your family Happy Maha ShivRatri</p></div><img src="img/24.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Maha ShivRatri</h4><p>We wish you and your family Happy Maha ShivRatri</p></div><img src="img/28.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Maha ShivRatri</h4><p>We wish you and your family Happy Maha ShivRatri</p></div><img src="img/26.jpg" alt=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item tab-active">
+                        <a class="tab-label active-btn">Holi</a>
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Holi</h4><p>We wish you and your family Happy Colofull Holi.</p></div><img src="img/33.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Holi</h4><p>We wish you and your family Happy Colofull Holi.</p></div><img src="img/25.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Holi</h4><p>We wish you and your family Happy Colofull Holi.</p></div><img src="img/34.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Happy Holi</h4><p>We wish you and your family Happy Colofull Holi.</p></div><img src="img/27.jpg" alt=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <a class="tab-label">Cultural</a>
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Traditionally Event</h4><p>Traditionally Event</p></div><img src="img/29.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Traditionally Event</h4><p>Traditionally Event</p></div><img src="img/30.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Traditionally Event</h4><p>Traditionally Event</p></div><img src="img/31.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Traditionally Event</h4><p>Traditionally Event</p></div><img src="img/32.jpg" alt=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <a class="tab-label">Photography</a>
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Photography</h4><p>Photography.</p></div><img src="img/35.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Photography</h4><p>Photography.</p></div><img src="img/36.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Photography</h4><p>Photography.</p></div><img src="img/37.jpg" alt=""></a></div>
+                                <div class="s-12 m-6 l-3"><a class="our-work-container lightbox margin-bottom"><div class="our-work-text"><h4>Photography</h4><p>Photography.</p></div><img src="img/38.jpg" alt=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item video-section">
+                        <a class="tab-label">Videos</a>
+                        <div class="tab-content">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-3">
+                                    <a class="our-work-container lightbox margin-bottom">
+                                        <div class="our-work-text"><h4>Sample Video</h4><p>Video.</p></div>
+                                        <video width="263" height="240" controls>
+                                            <source src="Video1.mp4" type="video/mp4">
+                                            <source src="movie.ogg" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </a>
+                                </div>
+                                <div class="s-12 m-6 l-3">
+                                    <a class="our-work-container lightbox margin-bottom">
+                                        <div class="our-work-text"><h4>Sample Video</h4><p>Video.</p></div>
+                                        <video width="263" height="240" controls>
+                                            <source src="Video1.mp4" type="video/mp4">
+                                            <source src="movie.ogg" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </a>
+                                </div>
+                                <div class="s-12 m-6 l-3">
+                                    <a class="our-work-container lightbox margin-bottom">
+                                        <div class="our-work-text"><h4>Sample Video</h4><p>Video.</p></div>
+                                        <video width="263" height="240" controls>
+                                            <source src="Video1.mp4" type="video/mp4">
+                                            <source src="movie.ogg" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </a>
+                                </div>
+                                <div class="s-12 m-6 l-3">
+                                    <a class="our-work-container lightbox margin-bottom">
+                                        <div class="our-work-text"><h4>Sample Video</h4><p>Video.</p></div>
+                                        <video width="263" height="240" controls>
+                                            <source src="Video1.mp4" type="video/mp4">
+                                            <source src="movie.ogg" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SERVICES -->
+        <div id="services">
+            <div class="line">
+                <h2 class="section-title">Who is Shiva</h2>
+                <p><strong>Shiva (शिव) is one of the principal deities of Hinduism. He is the supreme God within Shaivism, one of the three most influential denominations in contemporary Hinduism.<strong></p>
+                <div class="margin">
+                    <div class="s-12 m-6 l-4 margin-bottom">
+                        <!-- <i class="icon-vector"></i> -->
+                        <img style="height:100px; width:100px;" src="img/s2.png" alt="MahaDev">
+                        <div class="service-text">
+                            <h3>Shiv Om</h3>
+                            <p>Shiva is "the transformer" within the Trimurti, the Hindu trinity that includes Brahma and Vishnu. In Shaivism tradition, Shiva is the Supreme being who creates, protects and transforms the universe. In the goddess tradition of Hinduism called Shaktism, the goddess is described as supreme, yet Shiva is revered along with Vishnu and Brahma. A goddess is stated to be the energy and creative power (Shakti) of each, with Parvati the equal complementary partner of Shiva. He is one of the five equivalent deities in Panchayatana puja of the Smarta tradition of Hinduism.</p>
+                        </div>
+                    </div>
+                    <div class="s-12 m-6 l-4 margin-bottom">
+                        <!-- <i class="icon-eye"></i> -->
+                        <img style="height:100px; width:100px;" style="height:100px; width:100px;" src="img/s3.png" alt="MahaDev">
+                        <div class="service-text">
+                            <h3>Shiv Om</h3>
+                            <p>At the highest level, Shiva is regarded as formless, limitless, transcendent and unchanging absolute Brahman, and the primal Atman (soul, self) of the universe. Shiva has many benevolent and fearsome depictions. In benevolent aspects, he is depicted as an omniscient Yogi who lives an ascetic life on Mount Kailash[3] as well as a householder with wife Parvati and his two children, Ganesha and Kartikeya. In his fierce aspects, he is often depicted slaying demons. Shiva is also known as Adiyogi Shiva regarded as the patron god of yoga, meditation and arts.</p>
+                        </div>
+                    </div>
+                    <div class="s-12 m-12 l-4 margin-bottom">
+                        <!-- <i class="icon-random"></i> -->
+                        <img style="height:100px; width:100px;" src="img/s4.png" alt="MahaDev">
+                        <div class="service-text">
+                            <h3>Shiv Om</h3>
+                            <p>The main iconographical attributes of Shiva are the third eye on his forehead, the serpent around his neck, the adorning crescent moon, the holy river Ganga flowing from his matted hair, the trishula as his weapon and the damaru. Shiva is usually worshiped in the aniconic form of Lingam. Shiva is a pan-Hindu deity, revered widely across India, Nepal and Sri Lanka.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LATEST NEWS -->
+        <div id="latest-news">
+            <div class="line">
+                <h2 class="section-title">Latest News</h2>
+                <div class="margin">
+                    <div class="s-12 m-6 l-6">
+                        <div class="s-12 l-2">
+                            <div class="news-date">
+                                <p class="day">24</p><p class="month">FEBRUARY</p><p class="year">2017</p>
+                            </div>
+                        </div>
+                        <div class="s-12 l-10">
+                            <div class="news-text">
+                                <h4 class="ltnews"><span style="color:red;">M</span><span style="color:green;">A</span>H<span style="color:blue;">A</span><span style="color:blue-throated;">S</span>H<span style="color:red;">I</span><span style="color:green;">V</span>R<span style="color:blue;">T</span><span style="color:blue-throated;">R</span>I</h4>
+                                <p>Mahashivratri is one of the largest and most significant among the sacred festival nights of India. This – the darkest night of the year – celebrates the Grace of Shiva, who is considered the Adi Guru or the First Guru, from whom the yogic tradition originates. The planetary positions on this night are such that there is a powerful natural upsurge of energy in the human system.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-12 m-6 l-6">
+                        <div class="s-12 l-2">
+                            <div class="news-date">
+                                <p class="day">13</p><p class="month">MARCH</p><p class="year">2017</p>
+                            </div>
+                        </div>
+                        <div class="s-12 l-10">
+                            <div class="news-text">
+                                <h4 class="ltnews"><span style="color:red;">H</span><span style="color:green;">o</span><span style="color:blue;">l</span><span style="color:blue-throated;">i</span></h4>
+                                <p>The colorful festival of Holi is celebrated on Phalgun Purnima which comes in February end or early March. Holi festival has an ancient origin and celebrates the triumph of 'good' over 'bad'. The colorful festival bridges the social gap and renew sweet relationships. On this day, people hug and wish each other 'Happy Holi'.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTACT -->
+        <div id="contact">
+            <div class="line">
+                <h2 class="section-title" style="font-size:4em !important;  margin: 20px;">Contact Us</h2>
+                <div class="margin">
+                    <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">
+                        <img src="img/contact.jpg" alt="">
+                    </div>
+                    <div class="s-12 m-12 l-4 margin-bottom right-align">
+                        <h3>Pataleshwar Shiv Temple</h3>
+                        <address>
+                            <p><strong>Adress:</strong> Lakhana Khera, Post-Dhaomra</p>
+                            <p><strong>Teh:</strong> Milak, <strong>Police St.</strong>-Shahzaad Nagar</p>
+                            <p><strong>District:</strong> Rampur</p>
+                            <p><strong>State:</strong> Uttar Pradesh(244901)</p>
+                            <p><strong>Country:</strong> INDIA - ASIA</p>
+                            <p><strong>E-mail:</strong> pataleswar.lakhanakhera@gmail.com</p>
+                        </address>
+                        <br />
+                        <h3>Social Media</h3>
+                        <!-- <p><i class="icon-facebook icon"></i> <a href="https://www.facebook.com/Pataleswar-Shiv-Temple-565176623693121">Pataleswar Shiv Temple - <span style="color:#365899;">Facebook</span></a></p>
+                        <p><i class="icon-google_plus_circle"></i> <a href="https://plus.google.com/u/0/108130561463805069412">Pataleswar Shiv Temple - <span style="color:#a00d0d">Google+</span></a></p>
+                        <p class="margin-bottom"><i class="icon-twitter icon"></i> <a href="https://twitter.com/PataleswarShiv">Pataleswar Shiv Temple - <span style="color:#1da1f2;">Twitter</span></a></p> -->
+                        <p><img style="margin-bottom: -25px;" src="img/facebook.png" alt=""> <a style="margin-left: 30px;" href="https://www.facebook.com/Pataleswar-Shiv-Temple-565176623693121">Pataleswar Shiv Temple - <strong style="color:#365899;">Facebook</strong></a></p>
+                        <p><img style="margin-bottom: -25px;" src="img/google.png" alt=""> <a style="margin-left: 30px;" href="https://plus.google.com/u/0/108130561463805069412">Pataleswar Shiv Temple - <strong style="color:#a00d0d">Google+</strong></a></p>
+                        <p class="margin-bottom"><img style="margin-bottom: -25px;" src="img/twitter.png" alt=""> <a style="margin-left: 30px;" href="https://twitter.com/PataleswarShiv">Pataleswar Shiv Temple - <strong style="color:#1da1f2;">Twitter</strong></a></p>
+
+                        <div class="margin-bottom" align="left">
+                            <table style="border:0px solid !important;width:auto !important">
+                                <tr>
+                                    <td style="border-right:0px solid !important;padding: 0.1em !important;"><strong style="color: #92c500;font-size: 1em;font-weight: 700; margin: 0 0 0.625em;text-transform: uppercase;">Share On: </strong></td>
+                                    <td style="border-right:0px solid !important;padding: 0.1em !important;">
+                                        <span>
+                                            <a href="#" id="bottle" onclick="document.location='https://www.facebook.com/sharer/sharer.php?u=http://www.pataleswar.com/&p[title]=Hello friends please visit my site for learn something interesting about Lord Shiva!';return false;">
+                                                <img src="img/facebook_Share.png" alt="bottle" class="thumbnails" />
+                                            </a>
+                                        </span>
+                                    </td>
+                                    <td style="border-right:0px solid !important;padding: 0.1em !important;">
+                                        <span>
+                                            <a href="#" id="bottle" onclick="document.location='https://plus.google.com/share?hl=en&url=http://www.pataleswar.com/';return false;">
+                                                <img src="img/google_Share.png" alt="bottle" class="thumbnails" />
+                                            </a>
+                                        </span>
+                                    </td>
+                                    <td style="border-right:0px solid !important;padding: 0.1em !important;">
+                                        <span>
+                                            <a href="#" id="bottle" onclick="document.location='https://twitter.com/intent/tweet?url=Hello friends please visit my site for learn something interesting about Lord Shiva! http://www.pataleswar.com/';return false;">
+                                                <img src="img/twitter_Share.png" alt="bottle" class="thumbnails" />
+                                            </a>
+                                        </span>
+                                    </td>
+                                    <td style="border-right:0px solid !important;padding: 0.1em !important;">
+                                        <span>
+                                            <a href="whatsapp://send?text=Hello friends please visit my site for learn something interesting about Lord Shiva! http://www.pataleswar.com/" data-action="share/whatsapp/share">
+                                                <img src="img/whatsapp.jpg" alt="bottle" class="thumbnails" />
+                                            </a>
+                                        </span>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="s-12 m-12 l-5">
+                        <h3>Contact Us (If you have any query)</h3>
+
+                        <form class="customform" action="send.php" id="theform" name="theform" method="post">
+                            <div class="s-12"><input type="text" name="name" id="name" placeholder="Your Name*"></div>
+                            <div class="s-12"><input type="text" name="email" id="email" placeholder="Your Email*"></div>
+                            <div class="s-12"><input type="number" name="mobile" placeholder="Mobile No." type="text" /></div>
+                            <div class="s-12"><input type="text" name="subject" id="subject" placeholder="Subject*"></div>
+                            <div class="s-12"><textarea placeholder="Comments" class="inpt-ta" name="message" id="message" rows="5"></textarea>				</div>
+                            <div class="s-12  m-12 l-4"><button class="color-btn" type="submit">Submit Button</button></div>
+                            <!-- <button class="inpt-btn-contct">Submit</button>-->
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MAP -->
+        <div id="ii">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8520044209786!2d79.12901491508394!3d28.69407338239357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390a96b60bd928c9%3A0xe2772433e5b3b483!2sPataleshwar+Shiv+Temple%2C+Lakhna+Khera!5e0!3m2!1sen!2sin!4v1487247158782" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <!-- <iframe width="100%" height="450" src="http://www.citymaps.ie/create-google-map/map.php?width=100%&amp;height=450&amp;hl=en&amp;q=Pataleshwar%20Shiv%20Temple%2C%20Lakhna%20Khera+(Shiv%20Mandir)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="http://www.mapsdirections.info/medir-distancia-area.html">Medir Distancia en Google Maps</a> en <a href="http://www.mapsdirections.info/">www.mapsdirections.info</a></iframe> -->
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1247814.3661917313!2d16.569872019090596!3d48.23131953825178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8cbf758ecb9f%3A0xddeb1d26bce5eccf!2sGallayova+2150%2F19%2C+841+02+D%C3%BAbravka!5e0!3m2!1ssk!2ssk!4v1440344568394" width="100%" height="450" frameborder="0" style="border:0"></iframe> -->
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="line">
+            <div class="s-12 l-4">
+                <p>Copyright 2017, Vision Design - Cultural Motivation</p>
+                <p>All images is copy from Google. Do not use the images in your website.</p>
+            </div>
+            <div class="s-12 l-4">
+                <!-- <img style="" src="img/mypic.jpg" href="https://www.facebook.com/R1019120490" alt="bottle" class="thumbnails" /> -->
+                <table>
+                    <tr>
+                        <td class="manual"><img style="height:55px; widht:60px;" src="img/mypic.jpg" href="https://www.facebook.com/R1019120490" alt="bottle" class="thumbnails" /></td>
+                        <td class="manual"><img style="height:55px; widht:60px;" src="img/mypic.jpg" href="https://www.facebook.com/R1019120490" alt="bottle" class="thumbnails" /></td>
+                        <td class="manual"><img style="height:55px; widht:60px;" src="img/mypic.jpg" href="https://www.facebook.com/R1019120490" alt="bottle" class="thumbnails" /></td>
+                        <td class="manual"><img style="height:55px; widht:60px;" src="img/mypic.jpg" href="https://www.facebook.com/R1019120490" alt="bottle" class="thumbnails" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="s-12 l-4">
+                <a class="right" href="https://www.facebook.com/R1019120490" title="Responsee - lightweight responsive framework">Design and coding<br> by <strong>Rupesh Singh</strong></a>
+            </div>
+
+            <!-- //Model Images -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+            <!--POPUP-->
+
+            <div id="blanket" style="display:none;"></div>
+            <div id="popUpDiv" style="display:none;">
+
+                <!-- <a href="#" onclick="popup('popUpDiv')" >Click to Close CSS Pop Up</a><!-- Click to Close CSS Pop Up --> -->
+            </div>
+
+            <!-- / POPUP-->
+
+        </div>
+    </footer>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript">
+        var Vol = 1;
+        jQuery(document).ready(function ($) {
+            var theme_slider = $("#owl-demo");
+            $("#owl-demo").owlCarousel({
+                navigation: false,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                autoPlay: 6000,
+                addClassActive: true,
+                // transitionStyle: "fade",
+                singleItem: true
+            });
+            $("#owl-demo2").owlCarousel({
+                slideSpeed: 300,
+                autoPlay: true,
+                navigation: true,
+                navigationText: ["&#xf007", "&#xf006"],
+                pagination: false,
+                singleItem: true
+            });
+
+            // Custom Navigation Events
+            $(".next-arrow").click(function () {
+                theme_slider.trigger('owl.next');
+            })
+            $(".prev-arrow").click(function () {
+                theme_slider.trigger('owl.prev');
+            })
+
+            $("#popUpDiv").click(function () {
+                popup('popUpDiv');
+                var audio = document.getElementById('myPlayer');
+                audio.load()
+                audio.play();
+            })
+
+            $(function () {
+                $("input").click(function () {
+                    $("input").css('border', "none")
+                    $(this).css('border', "solid 2px red");
+                });
+            });
+
+            $('#btnPlay').css('border', "solid 2px red");
+
+            $("#btnVolUp").click(function () {
+
+                Vol += 1;
+                if (Vol > 0) {
+                    $("#btnMute").css('display', "none")
+                    $("#btnUnMute").css('display', "block")
+                }
+
+            })
+
+            $("#btnVolDown").click(function () {
+                Vol -= 1;
+                if (Vol = 0) {
+                    $("#btnMute").css('display', "block")
+                    $("#btnUnMute").css('display', "none")
+                }
+            })
+
+            $("#btnMute").click(function () {
+                debugger
+                $("#btnMute").css('display', "none")
+                $("#btnUnMute").css('display', "block")
+
+            })
+            $("#btnUnMute").click(function () {
+                debugger
+                $("#btnMute").css('display', "block")
+                $("#btnUnMute").css('display', "none")
+
+            })
+
+            Volume();
+        });
+        function Volume() {
+            document.getElementById("volUp").innerHTML = Vol;
+            document.getElementById("volDown").innerHTML = Vol;
+        }
+
+        var vid = document.getElementById("myPlayer");
+
+        function enableMute() {
+            vid.muted = true;
+            Volume();
+        }
+
+        function disableMute() {
+            vid.muted = false;
+            Volume();
+        }
+
+        function stop() {
+            vid.pause();
+            vid.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
